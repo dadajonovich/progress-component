@@ -85,6 +85,6 @@ export function createLoader({
 }
 
 const link = document.createElement('link');
-setAttributes(link, { href: '/loader/loader.css', rel: 'stylesheet' });
+setAttributes(link, { href: './loader/loader.css', rel: 'stylesheet' });
 
 document.head.append(link);
