@@ -19,10 +19,16 @@ document.addEventListener('DOMContentLoaded', () => {
     if (isNaN(value)) return;
     if (value > 100) value = 100;
     if (value < 0) value = 0;
-
-    e.target.value = value;
+    if (value) e.target.value = value;
 
     loader.setValue(value);
+  });
+
+  inputValue.addEventListener('blur', (e) => {
+    if (!e.target.value) {
+      e.target.value = 0;
+      loader.setValue(0);
+    }
   });
 
   switchAnimated.addEventListener('input', (e) => {
@@ -35,19 +41,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const view = document.getElementById('view');
   view.append(loader);
-
-  // setTimeout(() => {
-  //   loader.setValue(33);
-  //   setTimeout(() => {
-  //     loader.setValue(66);
-
-  //     setTimeout(() => {
-  //       loader.setValue(100);
-
-  //       setTimeout(() => {
-  //         loader.setIsHidden(true);
-  //       }, 1000);
-  //     }, 1000);
-  //   }, 1000);
-  // }, 500);
 });
