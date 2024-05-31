@@ -27,8 +27,7 @@ body {
   flex-grow: 1;
 
   align-items: center;
-  justify-content: center;
-  gap: 64px;
+  justify-content: space-around;
 }
 
 @media screen and (orientation: landscape) {

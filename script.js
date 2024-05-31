@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log(switchHide.checked);
 
   const loader = createLoader({
-    size: 140,
-    strokeWidth: 14,
+    size: 200,
+    strokeWidth: 20,
     value: inputValue.value,
     className: 'loader',
     isAnimated: switchAnimated.checked,

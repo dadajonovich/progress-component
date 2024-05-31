@@ -11,15 +11,19 @@ export function createLoader({
   isAnimated = false,
   isHide = false,
 } = {}) {
+  const halfSize = size / 2;
+
+  if (strokeWidth > halfSize) strokeWidth = halfSize;
+  if (strokeWidth < 0) strokeWidth = 0;
+
+  const radius = halfSize - strokeWidth / 2;
+  const circleLength = 2 * Math.PI * radius;
+
   const container = document.createElement('div');
   container.classList.add('lib-loader');
   if (className) container.classList.add(className);
   container.style.width = `${size}px`;
   container.style.height = `${size}px`;
-
-  const halfSize = size / 2;
-  const radius = halfSize - strokeWidth / 2;
-  const circleLength = 2 * Math.PI * radius;
 
   const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
 
