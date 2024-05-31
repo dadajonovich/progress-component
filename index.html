@@ -4,14 +4,29 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="style.css" />
+    <script type="module" src="script.js"></script>
     <title>Progress</title>
   </head>
   <body>
     <h2>Progress</h2>
-    <label for="checkbox">
-      <input type="checkbox" class="checkbox__inp" id="checkbox" />
-      <span class="checkbox__inner"> Animated </span>
-    </label>
-    <script src="script.js"></script>
+    <div class="options">
+      <label>
+        <input
+          type="number"
+          class="value__inp"
+          max="100"
+          min="0"
+          value="75"
+        /><span class="value__inner">Value</span>
+      </label>
+      <label>
+        <input type="checkbox" class="checkbox__inp" />
+        <span class="checkbox__inner"> Animated </span>
+      </label>
+      <label>
+        <input type="checkbox" class="checkbox__inp" />
+        <span class="checkbox__inner"> Hidden </span>
+      </label>
+    </div>
   </body>
 </html>
