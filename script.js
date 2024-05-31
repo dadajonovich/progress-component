@@ -15,7 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   inputValue.addEventListener('input', (e) => {
-    let value = Number(e.target.value);
+    let value = parseFloat(e.target.value);
+    if (isNaN(value)) return;
     if (value > 100) value = 100;
     if (value < 0) value = 0;
 
