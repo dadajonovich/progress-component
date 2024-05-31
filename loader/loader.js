@@ -26,6 +26,8 @@ export function createLoader({
   animationSpeed = 3000,
   transitionSpeed = 1000,
   className = '',
+  isAnimated = false,
+  isHide = false,
 } = {}) {
   const container = document.createElement('div');
   container.classList.add('lib-loader');
@@ -64,6 +66,7 @@ export function createLoader({
   container.setIsHidden = (isHidden) => {
     container.setAttribute('style', `visibility: ${isHidden ? 'hidden' : ''}`);
   };
+
   container.setIsAnimated = (isAnimated) => {
     svg.setAttribute(
       'style',
@@ -72,6 +75,7 @@ export function createLoader({
       }`
     );
   };
+
   container.setValue = (value) => {
     if (value > 100) value = 100;
     if (value < 0) value = 0;
@@ -88,6 +92,8 @@ export function createLoader({
     );
   };
   container.setValue(value);
+  container.setIsHidden(isHide);
+  container.setIsAnimated(isAnimated);
 
   return container;
 }
