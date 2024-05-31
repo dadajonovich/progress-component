@@ -1,10 +1,12 @@
+import { setAttributes } from './utils/setAttributes.js';
+
 function createCircle({ size, halfSize, radius, strokeWidth, color }) {
   const circle = document.createElementNS(
     'http://www.w3.org/2000/svg',
     'circle'
   );
 
-  const attribute = {
+  setAttributes(circle, {
     cx: String(halfSize),
     cy: String(halfSize),
     r: String(radius),
@@ -12,11 +14,7 @@ function createCircle({ size, halfSize, radius, strokeWidth, color }) {
     stroke: color,
     'stroke-width': String(strokeWidth),
     transform: `translate(0, ${size}) rotate(-90)`,
-  };
-
-  for (const key in attribute) {
-    circle.setAttribute(key, attribute[key]);
-  }
+  });
 
   return circle;
 }
@@ -40,8 +38,8 @@ export function createLoader({
   const circleLength = 2 * Math.PI * radius;
 
   const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-  svg.setAttribute('height', String(size));
-  svg.setAttribute('width', String(size));
+
+  setAttributes(svg, { height: String(size), width: String(size) });
 
   const circleGray = createCircle({
     size,
@@ -95,6 +93,6 @@ export function createLoader({
 }
 
 const link = document.createElement('link');
-link.setAttribute('href', '/loader/loader.css');
-link.setAttribute('rel', 'stylesheet');
+setAttributes(link, { href: '/loader/loader.css', rel: 'stylesheet' });
+
 document.head.append(link);
