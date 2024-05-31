@@ -25,10 +25,22 @@ body {
   padding: 24px;
   display: flex;
   flex-grow: 1;
-  flex-direction: column;
+
   align-items: center;
   justify-content: center;
   gap: 64px;
+}
+
+@media screen and (orientation: landscape) {
+  .wrapper {
+    flex-direction: row;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  .wrapper {
+    flex-direction: column;
+  }
 }
 
 .options {

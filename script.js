@@ -1,4 +1,4 @@
-import { createLoader } from './loader/loader.js';
+import { createLoader } from './loader/index.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const switchAnimated = document.getElementById('animated-control');
