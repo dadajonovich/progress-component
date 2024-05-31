@@ -8,25 +8,29 @@
     <title>Progress</title>
   </head>
   <body>
-    <h2>Progress</h2>
-    <div class="options">
-      <label>
-        <input
-          type="number"
-          class="value__inp"
-          max="100"
-          min="0"
-          value="75"
-        /><span class="value__inner">Value</span>
-      </label>
-      <label>
-        <input type="checkbox" class="checkbox__inp" />
-        <span class="checkbox__inner"> Animated </span>
-      </label>
-      <label>
-        <input type="checkbox" class="checkbox__inp" />
-        <span class="checkbox__inner"> Hidden </span>
-      </label>
+    <h2 class="title">Progress</h2>
+    <div class="wrapper">
+      <div id="view" class="view"></div>
+      <div class="options">
+        <label class="value">
+          <input
+            type="number"
+            class="value__inp"
+            max="100"
+            min="0"
+            value="75"
+          />
+          <span class="value__inner">Value</span>
+        </label>
+        <label>
+          <input type="checkbox" class="checkbox__inp" />
+          <span class="checkbox__inner">Animated</span>
+        </label>
+        <label>
+          <input type="checkbox" class="checkbox__inp" />
+          <span class="checkbox__inner">Hide</span>
+        </label>
+      </div>
     </div>
   </body>
 </html>

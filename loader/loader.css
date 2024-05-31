@@ -1,7 +1,5 @@
 .lib-loader {
   overflow: hidden;
-  width: 600px;
-  height: 600px;
 }
 
 @keyframes loader-rotation {

@@ -2,13 +2,14 @@ import { createLoader } from './loader/loader.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const loader = createLoader({
-    size: 100,
-    strokeWidth: 10,
+    size: 140,
+    strokeWidth: 14,
     value: 10,
-    className: '',
+    className: 'loader',
   });
 
-  document.body.append(loader);
+  const view = document.getElementById('view');
+  view.append(loader);
 
   loader.setIsAnimated(true);
 
