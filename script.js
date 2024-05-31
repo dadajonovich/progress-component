@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const switchAnimated = document.getElementById('animated-control');
   const switchHide = document.getElementById('hide-control');
   const inputValue = document.getElementById('value-control');
-  console.log(switchHide.checked);
 
   const loader = createLoader({
     size: 200,
@@ -16,7 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   inputValue.addEventListener('input', (e) => {
-    loader.setValue(e.target.value);
+    let value = Number(e.target.value);
+    if (value > 100) value = 100;
+    if (value < 0) value = 0;
+
+    e.target.value = value;
+
+    loader.setValue(value);
   });
 
   switchAnimated.addEventListener('input', (e) => {
